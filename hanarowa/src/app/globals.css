@@ -1,26 +1,184 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'Hana';
+  src: url('/fonts/Hana2-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: 'Hana';
+  src: url('/fonts/Hana2-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@font-face {
+  font-family: 'Hana';
+  src: url('/fonts/Hana2-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hana';
+  src: url('/fonts/Hana2-Bold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-hana: 'Hana', sans-serif;
+
+  /* Gray Scale */
+  --color-black: #393939;
+  --color-red: #f14a76;
+  --color-main: #209b98;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-hana);
+    overscroll-behavior: none;
+    background-color: var(--color-background);
+  }
+
+  body {
+    width: 100%;
+    min-height: 100dvh;
+    font-family: var(--font-hana);
+    scroll-behavior: smooth;
+  }
+
+  p {
+    word-break: keep-all;
+    white-space: pre-line;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  input:disabled {
+    cursor: not-allowed;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Bold font styles */
+  .font-bold-30 {
+    @apply font-hana text-[3.0rem] leading-[150%] font-bold;
+  }
+  .font-bold-28 {
+    @apply font-hana text-[2.8rem] leading-[150%] font-bold;
+  }
+  .font-bold-26 {
+    @apply font-hana text-[2.6rem] leading-[150%] font-bold;
+  }
+  .font-bold-24 {
+    @apply font-hana text-[2.4rem] leading-[150%] font-bold;
+  }
+  .font-bold-22 {
+    @apply font-hana text-[2.2rem] leading-[150%] font-bold;
+  }
+  .font-bold-20 {
+    @apply font-hana text-[2.0rem] leading-[150%] font-bold;
+  }
+  .font-bold-18 {
+    @apply font-hana text-[1.8rem] leading-[150%] font-bold;
+  }
+  .font-bold-16 {
+    @apply font-hana text-[1.6rem] leading-[150%] font-bold;
+  }
+
+  /* Medium font styles */
+  .font-medium-30 {
+    @apply font-hana text-[3.0rem] leading-[150%] font-medium;
+  }
+  .font-medium-28 {
+    @apply font-hana text-[2.8rem] leading-[150%] font-medium;
+  }
+  .font-medium-26 {
+    @apply font-hana text-[2.6rem] leading-[150%] font-medium;
+  }
+  .font-medium-24 {
+    @apply font-hana text-[2.4rem] leading-[150%] font-medium;
+  }
+  .font-medium-22 {
+    @apply font-hana text-[2.2rem] leading-[150%] font-medium;
+  }
+  .font-medium-20 {
+    @apply font-hana text-[2.0rem] leading-[150%] font-medium;
+  }
+  .font-medium-18 {
+    @apply font-hana text-[1.8rem] leading-[150%] font-medium;
+  }
+  .font-medium-16 {
+    @apply font-hana text-[1.6rem] leading-[150%] font-medium;
+  }
+
+  /* Regular font styles */
+  .font-regular-30 {
+    @apply font-hana text-[3.0rem] leading-[150%] font-normal;
+  }
+  .font-regular-28 {
+    @apply font-hana text-[2.8rem] leading-[150%] font-normal;
+  }
+  .font-regular-26 {
+    @apply font-hana text-[2.6rem] leading-[150%] font-normal;
+  }
+  .font-regular-24 {
+    @apply font-hana text-[2.4rem] leading-[150%] font-normal;
+  }
+  .font-regular-22 {
+    @apply font-hana text-[2.2rem] leading-[150%] font-normal;
+  }
+  .font-regular-20 {
+    @apply font-hana text-[2.0rem] leading-[150%] font-normal;
+  }
+  .font-regular-18 {
+    @apply font-hana text-[1.8rem] leading-[150%] font-normal;
+  }
+  .font-regular-16 {
+    @apply font-hana text-[1.6rem] leading-[150%] font-normal;
+  }
+
+  /* Light font styles */
+  .font-light-30 {
+    @apply font-hana text-[3.0rem] leading-[150%] font-light;
+  }
+  .font-light-28 {
+    @apply font-hana text-[2.8rem] leading-[150%] font-light;
+  }
+  .font-light-26 {
+    @apply font-hana text-[2.6rem] leading-[150%] font-light;
+  }
+  .font-light-24 {
+    @apply font-hana text-[2.4rem] leading-[150%] font-light;
+  }
+  .font-light-22 {
+    @apply font-hana text-[2.2rem] leading-[150%] font-light;
+  }
+  .font-light-20 {
+    @apply font-hana text-[2.0rem] leading-[150%] font-light;
+  }
+  .font-light-18 {
+    @apply font-hana text-[1.8rem] leading-[150%] font-light;
+  }
+  .font-light-16 {
+    @apply font-hana text-[1.6rem] leading-[150%] font-light;
+  }
 }
