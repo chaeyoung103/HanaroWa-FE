@@ -35,10 +35,24 @@
 @theme {
   --font-hana: 'Hana', sans-serif;
 
-  /* Gray Scale */
   --color-black: #393939;
+  --color-main: #00a49d;
   --color-red: #f14a76;
-  --color-main: #209b98;
+  --color-disable: #c8cbd1;
+  --color-background: #f8fafc;
+
+  --color-gray353: #535353;
+  --color-grayaaa: #aaaaaa;
+  --color-gray3af: #9ca3af;
+  --color-gray415: #141415;
+  --color-gray7eb: #e5e7eb;
+  --color-gray4a9: #9fa4a9;
+  --color-gray9a0: #7389a0;
+  --color-gray280: #6b7280;
+  --color-gray4f6: #gray4f6;
+
+  --color-kakao: #fee502;
+  --color-naver: #03c75a;
 }
 
 @layer base {
@@ -46,6 +60,7 @@
     font-family: var(--font-hana);
     overscroll-behavior: none;
     background-color: var(--color-background);
+    font-size: 62.5%;
   }
 
   body {
